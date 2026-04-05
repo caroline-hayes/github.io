@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Caroline Hayes</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: #f3f4f4;
+      color: #000000;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.1rem;
+      font-style: normal;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+    }
+
+    /* ── SIDE NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 160px;
+      height: 100vh;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    nav a {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.1rem;
+      font-style: normal;
+      color: #000000;
+      text-decoration: none;
+      display: block;
+      line-height: 1.8;
+    }
+
+    /* ── LAYOUT WRAPPER ── */
+    .layout {
+      margin-left: 160px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ── PAGES ── */
+    .page { display: none; flex: 1; flex-direction: column; }
+    .page.active { display: flex; }
+
+    /* ── HOME PAGE ── */
+    #page-home {
+      padding: 2rem 2.5rem;
+    }
+
+    .home-header {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 3.5rem;
+      font-weight: normal;
+      font-style: normal;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+
+    .home-body {
+      font-size: 1.1rem;
+    }
+
+    .home-body a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    /* ── PROJECTS PAGE ── */
+    #page-projects {
+      padding: 2rem 2.5rem;
+    }
+
+    .projects-strip {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scrollbar-width: thin;
+      scrollbar-color: #ccc #f3f4f4;
+    }
+
+    .projects-strip::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .projects-strip::-webkit-scrollbar-track {
+      background: #f3f4f4;
+    }
+
+    .projects-strip::-webkit-scrollbar-thumb {
+      background: #ccc;
+    }
+
+    .project-card {
+      flex: 0 0 auto;
+      width: 260px;
+      text-decoration: none;
+      color: #000000;
+      display: block;
+    }
+
+    .project-card .thumb {
+      width: 260px;
+      height: 180px;
+      background: #d8d9d9;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: #888;
+      overflow: hidden;
+    }
+
+    .project-card .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-card .project-title {
+      font-size: 1.1rem;
+      font-style: normal;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    /* ── ABOUT PAGE ── */
+    #page-about {
+      padding: 2rem 2.5rem;
+      max-width: 520px;
+    }
+
+    #page-about p {
+      margin-bottom: 1.2rem;
+    }
+
+    #page-about a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1.2rem 1.5rem;
+      }
+      .layout {
+        margin-left: 0;
+      }
+      body {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIDE NAV -->
+  <nav>
+    <a href="#" onclick="showPage('home'); return false;">(home)</a>
+    <a href="#" onclick="showPage('projects'); return false;">(projects)</a>
+    <a href="https://softjournal.cargo.site/" target="_blank">(soft)</a>
+    <a href="#" onclick="showPage('about'); return false;">(about)</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <div class="layout">
+
+    <!-- HOME -->
+    <div id="page-home" class="page active">
+      <h1 class="home-header">Caroline Hayes</h1>
+      <p class="home-body">
+        is a designer based in Los Angeles, California.
+        <a href="#" onclick="showPage('about'); return false;">[...]</a>
+      </p>
+    </div>
+
+    <!-- PROJECTS -->
+    <div id="page-projects" class="page">
+      <div class="projects-strip">
+
+        <a href="#" class="project-card">
+          <div class="thumb">
+            <!-- Replace with: <img src="your-image.jpg" alt="Project Name"> -->
+            image
+          </div>
+          <div class="project-title">Project Title</div>
+        </a>
+
+        <a href="#" class="project-card">
+          <div class="thumb">
+            image
+          </div>
+          <div class="project-title">Project Title</div>
+        </a>
+
+        <a href="#" class="project-card">
+          <div class="thumb">
+            image
+          </div>
+          <div class="project-title">Project Title</div>
+        </a>
+
+        <a href="#" class="project-card">
+          <div class="thumb">
+            image
+          </div>
+          <div class="project-title">Project Title</div>
+        </a>
+
+        <a href="#" class="project-card">
+          <div class="thumb">
+            image
+          </div>
+          <div class="project-title">Project Title</div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="page-about" class="page">
+      <p>Caroline Hayes is a designer based in Los Angeles, California.</p>
+      <p>Her work spans visual identity, editorial design, and digital experiences.</p>
+      <p><a href="mailto:hello@caroline-hayes.com">hello@caroline-hayes.com</a></p>
+    </div>
+
+  </div>
+
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-' + id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
