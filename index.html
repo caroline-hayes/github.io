@@ -232,7 +232,13 @@
       display: block;
       margin: 1rem 0;
     }
-
+    /* two-column layout inside detail body */
+    #detail-body .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 0rem 0;
+    }
     /* four-column layout inside detail body */
     #detail-body .four-col {
       display: grid;
@@ -541,14 +547,22 @@
       <div>
         <img src="TH_THESIS_NEIM_SU24_Hayes_Caroline_MD_25_Pillow.jpg">
         <video controls width="100%">
-    <source src="TH_web_video.mov" type="video/quicktime">
+    <source src="TH_web_video2.mp4" type="video/mp4">
         </video>
         <img src="TH_moldings.png">
+        <img src="TH_web_canalhulls.png"
         <img src="TH_web_profiles-molding4.png">
         <img src="TH_THESIS_NEIM_SU24_Hayes_Caroline_MD_54.jpg">
         <img src="TH_web_site-diagram.png">
         <img src="TH_web_section-wet.png">
+        <img src="TH_web_section-dry.png">
       </div>
+
+      <div class="two-col">
+        <img src="TH_web_MD_waterkeeper.png">
+        <img src="TH_web_installation-textiles.png">
+        <img src="TH_web_render-waterkeeper.png">
+        <img src="TH_web_rendering_int1.png">
 
     </div>
         `
@@ -601,3 +615,5 @@
 
 </body>
 </html>
+
+
