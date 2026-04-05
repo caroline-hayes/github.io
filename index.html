@@ -337,8 +337,6 @@
         <!-- Project detail panel -->
         <div class="project-detail" id="project-detail-panel">
           <a class="close-detail" onclick="closeProject()">[close]</a>
-          <div class="project-detail-image" id="detail-image">image</div>
-          <h2 id="detail-title"></h2>
           <div id="detail-body"></div>
         </div>
 
@@ -437,15 +435,7 @@
 
     function openProject(id) {
       const p = projects[id];
-      document.getElementById('detail-title').textContent = p.title;
       document.getElementById('detail-body').innerHTML = p.body;
-
-      const imgEl = document.getElementById('detail-image');
-      if (p.image) {
-        imgEl.innerHTML = `<img src="${p.image}" alt="${p.title}">`;
-      } else {
-        imgEl.innerHTML = 'image';
-      }
 
       document.getElementById('project-detail-panel').classList.add('open');
     }
@@ -457,4 +447,3 @@
 
 </body>
 </html>
-
