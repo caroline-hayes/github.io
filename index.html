@@ -20,245 +20,368 @@
       color: #000000;
       font-family: 'Times New Roman', Times, serif;
       font-size: 1.1rem;
-      font-style: normal;
-      line-height: 1.6;
+      line-height: 1;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
+    }
+
+    /* ── SITE TITLE — always at very top ── */
+    #site-title {
+      padding: 1.5rem 1.5rem 0 1.5rem;
+      font-size: 3.5rem;
+      font-weight: normal;
+      font-style: normal;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    #site-title a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    /* ── BODY AREA: nav + content side by side ── */
+    .body-area {
+      display: flex;
+      flex: 1;
+      padding-top: 1.5rem;
     }
 
     /* ── SIDE NAV ── */
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
       width: 160px;
-      height: 100vh;
-      padding: 2rem 1.5rem;
+      flex-shrink: 0;
+      padding: 0 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
+      gap: 0;
     }
 
     nav a {
       font-family: 'Times New Roman', Times, serif;
       font-size: 1.1rem;
-      font-style: normal;
-      color: #000000;
+      color: #000;
       text-decoration: none;
       display: block;
       line-height: 1.8;
     }
 
-    /* ── LAYOUT WRAPPER ── */
-    .layout {
-      margin-left: 160px;
+    /* ── PAGE CONTENT ── */
+    .pages {
       flex: 1;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      position: relative;
     }
 
-    /* ── PAGES ── */
-    .page { display: none; flex: 1; flex-direction: column; }
-    .page.active { display: flex; }
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
 
     /* ── HOME PAGE ── */
     #page-home {
-      padding: 2rem 2.5rem;
+      padding: 0 2rem;
     }
 
-    .home-header {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 3.5rem;
-      font-weight: normal;
-      font-style: normal;
-      line-height: 1.1;
-      margin-bottom: 1.2rem;
-    }
-
-    .home-body {
+    .home-intro {
       font-size: 1.1rem;
+      line-height: 1.8;
     }
 
-    .home-body a {
-      color: #000000;
+    .home-intro a {
+      color: #000;
       text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* ── ABOUT POPUP (inline reveal on home) ── */
+    #about-popup {
+      display: none;
+      margin-top: 1.2rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      max-width: 480px;
+    }
+
+    #about-popup.open {
+      display: block;
     }
 
     /* ── PROJECTS PAGE ── */
     #page-projects {
-      padding: 2rem 2.5rem;
+      display: none;
+      padding: 0;
     }
 
-    .projects-strip {
+    #page-projects.active {
       display: flex;
       flex-direction: row;
-      gap: 2rem;
-      overflow-x: auto;
-      padding-bottom: 1rem;
-      scrollbar-width: thin;
-      scrollbar-color: #ccc #f3f4f4;
+      height: calc(100vh - 3.5rem - 1.5rem - 1.5rem);
     }
 
-    .projects-strip::-webkit-scrollbar {
-      height: 4px;
+    /* Left: vertical scrolling project list */
+    .projects-index {
+      width: 33vw;
+      overflow-y: auto;
+      padding: 0 2rem 2rem 2rem;
+      flex-shrink: 0;
+      scrollbar-width: none;
     }
 
-    .projects-strip::-webkit-scrollbar-track {
-      background: #f3f4f4;
+    .projects-index::-webkit-scrollbar {
+      display: none;
     }
 
-    .projects-strip::-webkit-scrollbar-thumb {
-      background: #ccc;
-    }
-
-    .project-card {
-      flex: 0 0 auto;
-      width: 260px;
-      text-decoration: none;
-      color: #000000;
+    .project-item {
       display: block;
+      text-decoration: none;
+      color: #000;
+      margin-bottom: 2.5rem;
+      cursor: pointer;
     }
 
-    .project-card .thumb {
-      width: 260px;
-      height: 180px;
+    .project-item .thumb {
+      width: 100%;
+      aspect-ratio: 4 / 3;
       background: #d8d9d9;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.4rem;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 0.8rem;
       color: #888;
-      overflow: hidden;
     }
 
-    .project-card .thumb img {
+    .project-item .thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
 
-    .project-card .project-title {
+    .project-item .project-title {
       font-size: 1.1rem;
-      font-style: normal;
-      font-family: 'Times New Roman', Times, serif;
+      line-height: 1.8;
     }
 
-    /* ── ABOUT PAGE ── */
-    #page-about {
-      padding: 2rem 2.5rem;
-      max-width: 520px;
+    /* Right: project detail popup */
+    .project-detail {
+      flex: 1;
+      padding: 0 2rem 2rem 2rem;
+      overflow-y: auto;
+      display: none;
+      scrollbar-width: none;
     }
 
-    #page-about p {
+    .project-detail::-webkit-scrollbar {
+      display: none;
+    }
+
+    .project-detail.open {
+      display: block;
+    }
+
+    .project-detail-image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #d8d9d9;
       margin-bottom: 1.2rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: #888;
     }
 
-    #page-about a {
-      color: #000000;
+    .project-detail-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-detail h2 {
+      font-size: 1.1rem;
+      font-weight: normal;
+      margin-bottom: 0.8rem;
+      line-height: 1.8;
+    }
+
+    .project-detail p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .project-detail .close-detail {
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      color: #000;
       text-decoration: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1.8;
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      nav {
-        position: relative;
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 1rem;
-        padding: 1.2rem 1.5rem;
-      }
-      .layout {
-        margin-left: 0;
-      }
-      body {
-        flex-direction: column;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <!-- SIDE NAV -->
-  <nav>
-    <a href="#" onclick="showPage('home'); return false;">(home)</a>
-    <a href="#" onclick="showPage('projects'); return false;">(projects)</a>
-    <a href="https://softjournal.cargo.site/" target="_blank">(soft)</a>
-    <a href="#" onclick="showPage('about'); return false;">(about)</a>
-  </nav>
-
-  <!-- MAIN CONTENT -->
-  <div class="layout">
-
-    <!-- HOME -->
-    <div id="page-home" class="page active">
-      <h1 class="home-header">Caroline Hayes</h1>
-      <p class="home-body">
-        is a designer based in Los Angeles, California.
-        <a href="#" onclick="showPage('about'); return false;">[...]</a>
-      </p>
-    </div>
-
-    <!-- PROJECTS -->
-    <div id="page-projects" class="page">
-      <div class="projects-strip">
-
-        <a href="#" class="project-card">
-          <div class="thumb">
-            <!-- Replace with: <img src="your-image.jpg" alt="Project Name"> -->
-            image
-          </div>
-          <div class="project-title">Project Title</div>
-        </a>
-
-        <a href="#" class="project-card">
-          <div class="thumb">
-            image
-          </div>
-          <div class="project-title">Project Title</div>
-        </a>
-
-        <a href="#" class="project-card">
-          <div class="thumb">
-            image
-          </div>
-          <div class="project-title">Project Title</div>
-        </a>
-
-        <a href="#" class="project-card">
-          <div class="thumb">
-            image
-          </div>
-          <div class="project-title">Project Title</div>
-        </a>
-
-        <a href="#" class="project-card">
-          <div class="thumb">
-            image
-          </div>
-          <div class="project-title">Project Title</div>
-        </a>
-
-      </div>
-    </div>
-
-    <!-- ABOUT -->
-    <div id="page-about" class="page">
-      <p>Caroline Hayes is a designer based in Los Angeles, California.</p>
-      <p>Her work spans visual identity, editorial design, and digital experiences.</p>
-      <p><a href="mailto:hello@caroline-hayes.com">hello@caroline-hayes.com</a></p>
-    </div>
-
+  <!-- SITE TITLE — always at top -->
+  <div id="site-title">
+    <a href="#" onclick="showPage('home'); return false;">Caroline Hayes</a>
   </div>
 
+  <!-- BODY AREA -->
+  <div class="body-area">
+
+    <!-- SIDE NAV -->
+    <nav>
+      <a href="#" onclick="showPage('home'); return false;">(home)</a>
+      <a href="#" onclick="showPage('projects'); return false;">(projects)</a>
+      <a href="https://softjournal.cargo.site/" target="_blank">(soft)</a>
+      <a href="#" onclick="toggleAbout(); return false;">(about)</a>
+    </nav>
+
+    <!-- PAGES -->
+    <div class="pages">
+
+      <!-- HOME -->
+      <div id="page-home" class="page active">
+        <p class="home-intro">
+          is a designer based in Los Angeles, California.
+          <a onclick="toggleAbout()">[...]</a>
+        </p>
+        <div id="about-popup">
+          <p>Caroline Hayes is a designer based in Los Angeles, California.</p>
+          <br>
+          <p>Her work spans visual identity, editorial design, and digital experiences.</p>
+          <br>
+          <p><a href="mailto:hello@caroline-hayes.com" style="color:#000; text-decoration:none;">hello@caroline-hayes.com</a></p>
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div id="page-projects" class="page">
+
+        <!-- Scrollable project list -->
+        <div class="projects-index">
+
+          <div class="project-item" onclick="openProject('project1')">
+            <div class="thumb">
+              <!-- <img src="your-image.jpg" alt="Project 1"> -->
+              image
+            </div>
+            <div class="project-title">Project Title</div>
+          </div>
+
+          <div class="project-item" onclick="openProject('project2')">
+            <div class="thumb">
+              image
+            </div>
+            <div class="project-title">Project Title</div>
+          </div>
+
+          <div class="project-item" onclick="openProject('project3')">
+            <div class="thumb">
+              image
+            </div>
+            <div class="project-title">Project Title</div>
+          </div>
+
+          <div class="project-item" onclick="openProject('project4')">
+            <div class="thumb">
+              image
+            </div>
+            <div class="project-title">Project Title</div>
+          </div>
+
+          <div class="project-item" onclick="openProject('project5')">
+            <div class="thumb">
+              image
+            </div>
+            <div class="project-title">Project Title</div>
+          </div>
+
+        </div>
+
+        <!-- Project detail panel -->
+        <div class="project-detail" id="project-detail-panel">
+          <a class="close-detail" onclick="closeProject()">[close]</a>
+          <div class="project-detail-image" id="detail-image">image</div>
+          <h2 id="detail-title">Project Title</h2>
+          <p id="detail-body">Project description goes here. Add as much text as you like — this panel scrolls independently.</p>
+        </div>
+
+      </div>
+
+    </div><!-- /pages -->
+  </div><!-- /body-area -->
+
   <script>
+    // Project data — fill this in with your real content
+    const projects = {
+      project1: {
+        title: 'Project Title',
+        image: '', // e.g. 'images/project1.jpg'
+        body: 'Project description goes here. Add as much text as you like — this panel scrolls independently.'
+      },
+      project2: {
+        title: 'Project Title',
+        image: '',
+        body: 'Project description goes here.'
+      },
+      project3: {
+        title: 'Project Title',
+        image: '',
+        body: 'Project description goes here.'
+      },
+      project4: {
+        title: 'Project Title',
+        image: '',
+        body: 'Project description goes here.'
+      },
+      project5: {
+        title: 'Project Title',
+        image: '',
+        body: 'Project description goes here.'
+      }
+    };
+
     function showPage(id) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.getElementById('page-' + id).classList.add('active');
+      // close project detail when navigating away
+      closeProject();
+    }
+
+    function toggleAbout() {
+      // Make sure we're on home
+      showPage('home');
+      const popup = document.getElementById('about-popup');
+      popup.classList.toggle('open');
+    }
+
+    function openProject(id) {
+      const p = projects[id];
+      document.getElementById('detail-title').textContent = p.title;
+      document.getElementById('detail-body').textContent = p.body;
+
+      const imgEl = document.getElementById('detail-image');
+      if (p.image) {
+        imgEl.innerHTML = `<img src="${p.image}" alt="${p.title}">`;
+      } else {
+        imgEl.innerHTML = 'image';
+      }
+
+      document.getElementById('project-detail-panel').classList.add('open');
+    }
+
+    function closeProject() {
+      document.getElementById('project-detail-panel').classList.remove('open');
     }
   </script>
 
