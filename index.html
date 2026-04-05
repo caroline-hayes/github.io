@@ -230,19 +230,19 @@
       margin: 1rem 0;
     }
 
-    /* Two-column layout inside detail body */
-    #detail-body .two-col {
+    /* four-column layout inside detail body */
+    #detail-body .four-col {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 10fr 4fr 1fr 15fr;
       gap: 1rem;
-      margin: 1rem 0;
+      margin: 0rem 0;
     }
 
-    #detail-body .two-col img {
+    #detail-body .four-col img {
       margin: 0;
     }
 
-    #detail-body .two-col p {
+    #detail-body .four-col p {
       margin-bottom: 0;
     }
 
@@ -351,12 +351,46 @@
     const projects = {
       project1: {
         body: `
-          <div class="two-col">
+          <div class="four-col">
 
   <div>
-    <p>“a conduit, a container, a spot of ink” steals one historic disjunction to produce a few more. In modernity, Henri Lefebvre identified identity as increasingly separated between two times: leisure time and labor time. While labor predicates on producing something, leisure has increasingly involved consumption.<sup><span style="--font-scale: 0.8;">1</span></sup> It is difficult to identify how one sources a form of being, inhabiting time, or otherwise doing, that does not produce nor consume. McKenzie Wark phrases this more succinctly: <i>what would it mean to construct a positive freedom within time?</i><sup><span style="--font-scale: 0.8;">2</span></sup></p>
-    <p>Second paragraph.</p>
-    <p>Third paragraph.</p>
+    <p>“a conduit, a container, a spot of ink” steals one historic disjunction to produce a few more. In modernity, Henri Lefebvre identified identity as increasingly separated between two times: leisure time and labor time. While labor predicates on producing something, leisure has increasingly involved consumption.<sup><span style="--font-scale: 0.5;">1</span></sup> It is difficult to identify how one sources a form of being, inhabiting time, or otherwise doing, that does not produce nor consume. McKenzie Wark phrases this more succinctly: <i>what would it mean to construct a positive freedom within time?</i><sup><span style="--font-scale: 0.5;">2</span></sup></p>
+    <br>
+    <p>A possibility exists within the domestic sphere. Here it is possible for work to occur that does not quite fit into either of Lefebvre's definitions. This type of work is that of maintenance and care: cleaning, bathing, playing an instrument, re-arranging, looking out the window, or otherwise occupying space without mandate. While an exertion, domestic work may not actively produce nor consume, but it can prolong time, material, and constructions.<br></p>
+    <br>
+    <p>Hosting these customs, domestic spheres can refuse to privilege external modes of capital circulation. The performance of the political occurs here not by getting involved but by refusing. While the value of politics &nbsp;revolves around the outside – in "the public" – the private realm is equally political and deserving of analysis.</p>
+    <br>
+    <p>A first set of models draw on Robin Evan's descriptions of the developed surface.<span style="--font-scale: 0.8;"><sup>3</sup></span> A blip in the history of Western Bourgeois architecture, this form of representation prioritized internal elevations over the plan of the house. Leisure proliferates along the walls through ornament and furniture.</p>
+    <br>
+    <p>One model describes an apartment and mounts each interior by its partitioning face. This extends to a tapestry: a stitch of internal elevations is an unfolding epic of the interior where multiple readings are flattened into one. Annotations of construction, both of the projected space and of the physical tapestry, layer onto the surface. An elongated plaster pillow fills this. Marks and annotations of the interior fabric mold transfer onto the plaster in the process of curing, inscribing the act of observation through the material.</p>
+  </div>
+
+  <div>
+        <br>
+<br>
+<br>
+<p>1. Lefebvre, Henri. “Forward: Critique of Everyday Life.” In <i>Critique of Everyday Life</i>. Verso, 1988.</p>
+<p>2. Wark, McKenzie. <i>The Beach Beneath the Street</i>. Verso, 2011.</span></p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>3. Evans, Robins. “The Developed Surface...” In <i>Translations from Drawings to Building and Other Essays</i>. MIT Press, 1997.</span></column-unit><column-unit slot="2" span="1"><br>
+<br>
+<br>
+<br>
+<br>
+  </div>
+
+      <div>
   </div>
 
     <div>
