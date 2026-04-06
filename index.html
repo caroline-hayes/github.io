@@ -189,7 +189,7 @@
     /* ── PROJECT DETAIL PANEL ── */
     .project-detail {
       flex: 1;
-      padding: 0 0 0.5rem 1.5rem;
+      padding: 0 0 0rem 1.5rem;
       overflow-y: auto;
       display: none;
       scrollbar-width: none;
@@ -321,6 +321,14 @@
       color: #888;
     }
 
+    .slideshow.clickable .slide {
+  cursor: e-resize;
+}
+
+.slideshow.clickable .slideshow-controls {
+  display: none;
+}
+
     /* ── BODY COPY LINKS ── */
     .bodycopy-link a, a.bodycopy-link {
       color: #000;
@@ -421,6 +429,15 @@
           slides.forEach((s, i) => s.classList.toggle('active', i === current));
           if (counter) counter.textContent = (current + 1) + ' / ' + slides.length;
         }
+
+        if (ss.classList.contains('clickable')) {
+  ss.querySelectorAll('.slide').forEach(slide => {
+    slide.addEventListener('click', () => {
+      current = (current + 1) % slides.length;
+      update();
+    });
+  });
+}
 
         ss.querySelector('.btn-prev').addEventListener('click', () => {
           current = (current - 1 + slides.length) % slides.length;
@@ -537,7 +554,7 @@
               <img src="TH_web_profiles-molding4.png" alt="Profiles">
               <img src="TH_web_canalhulls.png" alt="Canal hulls">
 
-              <div class="slideshow" id="slideshow-THextrusions">
+              <div class="slideshow clickable" id="slideshow-THextrusions">
                 <div class="slide active"><img src="TH_web_extrusion_1.png" alt="Extrusion 1"></div>
                 <div class="slide"><img src="TH_web_extrusion_2.png" alt="Extrusion 2"></div>
                 <div class="slide"><img src="TH_web_extrusion_3.png" alt="Extrusion 3"></div>
@@ -552,7 +569,7 @@
 
               <img src="TH_web_site-diagram.png">
 
-              <div class="slideshow" id="slideshow-THsections">
+              <div class="slideshow clickable" id="slideshow-THsections">
                 <div class="slide active"><img src="TH_web_section-dry.png" alt="Dry Section"></div>
                 <div class="slide"><img src="TH_web_section-wet.png" alt="Wet Section"></div>
                 <div class="slideshow-controls">
@@ -635,7 +652,7 @@
                 <source src="DV_animation_480.mp4" type="video/mp4">
               </video>
 
-              <div class="slideshow" id="slideshow-DVBox">
+              <div class="slideshow clickable" id="slideshow-DVBox">
                 <div class="slide active"><img src="DV_downsized-Box_roll.png" alt="Box rolled"></div>
                 <div class="slide"><img src="DV_downsized-box_semi.png" alt="Box semi"></div>
                 <div class="slide"><img src="DV_downsized-box_un.png" alt="Box unrolled"></div>
@@ -646,7 +663,7 @@
                 </div>
               </div>
 
-              <div class="slideshow" id="slideshow-DVHip">
+              <div class="slideshow clickable" id="slideshow-DVHip">
                 <div class="slide active"><img src="DV_downsized-render_0014_Hipped_roll.png" alt="Hipped rolled"></div>
                 <div class="slide"><img src="DV_downsized-render_0013_Hipped_semi.png" alt="Hipped semi"></div>
                 <div class="slide"><img src="DV_downsized-render_0012_Hipped_un.png" alt="Hipped unrolled"></div>
@@ -657,7 +674,7 @@
                 </div>
               </div>
 
-              <div class="slideshow" id="slideshow-DVLean">
+              <div class="slideshow clickable" id="slideshow-DVLean">
                 <div class="slide active"><img src="DV_downsized-render_0011_Lean_roll.png" alt="Lean rolled"></div>
                 <div class="slide"><img src="DV_downsized-render_0010_Lean_semi.png" alt="Lean semi"></div>
                 <div class="slide"><img src="DV_downsized-render_0009_Lean_un.png" alt="Lean unrolled"></div>
@@ -668,7 +685,7 @@
                 </div>
               </div>
 
-              <div class="slideshow" id="slideshow-DVMan">
+              <div class="slideshow clickable" id="slideshow-DVMan">
                 <div class="slide active"><img src="DV_downsized-render_0008_Mansard_roll.png" alt="Mansard rolled"></div>
                 <div class="slide"><img src="DV_downsized-render_0007_Mansard_semi.png" alt="Mansard semi"></div>
                 <div class="slide"><img src="DV_downsized-render_0006_Mansard_un.png" alt="Mansard unrolled"></div>
@@ -679,7 +696,7 @@
                 </div>
               </div>
 
-              <div class="slideshow" id="slideshow-DVPitcher">
+              <div class="slideshow clickable" id="slideshow-DVPitcher">
                 <div class="slide active"><img src="DV_downsized-render_0005_Pitcher_roll.png" alt="Pitcher rolled"></div>
                 <div class="slide"><img src="DV_downsized-render_0004_Pitcher_semi.png" alt="Pitcher semi"></div>
                 <div class="slide"><img src="DV_downsized-render_0003_Pitcher_un.png" alt="Pitcher unrolled"></div>
@@ -690,7 +707,7 @@
                 </div>
               </div>
 
-              <div class="slideshow" id="slideshow-DVZig">
+              <div class="slideshow clickable" id="slideshow-DVZig">
                 <div class="slide active"><img src="DV_downsized-render_0002_Zig_roll.png" alt="Zig rolled"></div>
                 <div class="slide"><img src="DV_downsized-render_0001_Zig_semi.png" alt="Zig semi"></div>
                 <div class="slide"><img src="DV_downsized-render_0000_Zig_un.png" alt="Zig unrolled"></div>
@@ -701,7 +718,7 @@
                 </div>
               </div>
 
-              <div class="slideshow" id="slideshow-DVChev">
+              <div class="slideshow clickable" id="slideshow-DVChev">
                 <div class="slide active"><img src="DV_downsized-chevron_roll.png" alt="Chevron rolled"></div>
                 <div class="slide"><img src="DV_downsized-render_0001_Zig_semi.png" alt="Chevron semi"></div>
                 <div class="slide"><img src="DV_downsized-render_0000_Zig_un.png" alt="Chevron unrolled"></div>
@@ -740,7 +757,7 @@
           </div>
 
           <div>
-            <div class="slideshow" id="slideshow-DVSmallMD">
+            <div class="slideshow clickable" id="slideshow-DVSmallMD">
               <div class="slide active"><img src="DV_web_Model_08.png" alt="Model 08"></div>
               <div class="slide"><img src="DV_web_Model_03.png" alt="Model 03"></div>
               <div class="slide"><img src="DV_web_Model_06.png" alt="Model 06"></div>
@@ -752,7 +769,7 @@
               </div>
             </div>
 
-            <div class="slideshow" id="slideshow-DVLargeMD">
+            <div class="slideshow clickable" id="slideshow-DVLargeMD">
               <div class="slide active"><img src="DV_web_IMG_0059_3.png" alt="Large model 3"></div>
               <div class="slide"><img src="DV_web_IMG_0059_2.png" alt="Large model 2"></div>
               <div class="slide"><img src="DV_web_IMG_0059_1.png" alt="Large model 1"></div>
@@ -799,9 +816,9 @@
             <div></div>
 
             <div>
-              <div class="slideshow" id="slideshow-ZGBlocks">
-                <div class="slide active"><img src="Hayes_Caroline_MIDTERM_DG_01.png" alt="Block Folding"></div>
-                <div class="slide"><img src="Hayes_Caroline_MIDTERM_DG_02.png" alt="Block Contours"></div>
+              <div class="slideshow clickable" id="slideshow-ZGBlocks">
+                <div class="slide active"><img src="ZG_Hayes_Caroline_MIDTERM_DG_01" alt="Block Folding"></div>
+                <div class="slide"><img src="ZG_Hayes_Caroline_MIDTERM_DG_02" alt="Block Contours"></div>
                 <div class="slideshow-controls">
                   <button class="btn-prev">←</button>
                   <span class="slide-counter"></span>
@@ -809,7 +826,7 @@
                 </div>
               </div>
 
-              <div class="slideshow" id="slideshow-ZGSticks">
+              <div class="slideshow clickable" id="slideshow-ZGSticks">
                 <div class="slide active"><img src="ZG_web_stick2.png" alt="Stick 2"></div>
                 <div class="slide"><img src="ZG_web_stick3.png" alt="Stick 3"></div>
                 <div class="slide"><img src="ZG_web_stick4.png" alt="Stick 4"></div>
@@ -821,7 +838,7 @@
                 </div>
               </div>
 
-              <div class="slideshow" id="slideshow-ZGPlans">
+              <div class="slideshow clickable" id="slideshow-ZGPlans">
                 <div class="slide active"><img src="ZG_web_pl02.png" alt="Plan 02"></div>
                 <div class="slide"><img src="ZG_web_pl03.png" alt="Plan 03"></div>
                 <div class="slide"><img src="ZG_web_pl04.png" alt="Plan 04"></div>
@@ -834,7 +851,7 @@
                   <button class="btn-next">→</button>
                 </div>
               </div>
-              <div class="slideshow" id="slideshow-ZGSections">
+              <div class="slideshow clickable" id="slideshow-ZGSections">
                 <div class="slide active"><img src="ZG_web_scAA.png" alt="Section AA"></div>
                 <div class="slide"><img src="ZG_web_scBB.png" alt="Section BB"></div>
                 <div class="slide"><img src="ZG_web_scCC.png" alt="Section CC"></div>
@@ -845,7 +862,7 @@
                 </div>
               </div>
 
-              <div class="slideshow" id="slideshow-ZGRenders">
+              <div class="slideshow clickable" id="slideshow-ZGRenders">
                 <div class="slide active"><img src="ZG_Block_D_02.jpg" alt="Final 5"></div>
                 <div class="slide"><img src="ZG_Block_01.jpg" alt="Final 1"></div>
                 <div class="slide"><img src="ZG_Block_02.jpg" alt="Final 2"></div>
