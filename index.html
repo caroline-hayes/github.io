@@ -254,7 +254,7 @@
       display: grid;
       grid-template-columns: 11fr 3fr 1fr 15fr;
       gap: 1rem;
-      margin: 1rem;
+      margin: 1rem 0;
     }
 
     #detail-body .four-col img {
@@ -529,7 +529,7 @@
             <div>
               <img src="TH_THESIS_NEIM_SU24_Hayes_Caroline_MD_25_Pillow.jpg" alt="Pillow model">
 
-              <video controls width="100%">
+              <video autoplay muted loop playsinline width="100%">
                 <source src="TH_web_video2.mp4" type="video/mp4">
               </video>
 
@@ -594,145 +594,294 @@
 
       project2: {
         body: `
-        <div class="two-col">
-          <div>
-          <p>Each house predominates what is expected of the home and how its inhabitants should use it. Architectural expressions of what is expected and normal extend beyond use into cultural and social realms. The American home is constructed, both materially and socially, through standardization and the rendering of the home as a product.</p>
-          <br>
-          <p>The development of the modern home came hand-in-hand with technology. Namely, plumbing and mechanical systems mandated pre-programmed and socialized rooms. This is distinguished from the simple construction of wall-threshold-floor that went into previous residential construction. Such preconceived notions illustrated architecture’s role in determining the socialization of the domestic home: where the kitchen was, the ensuite bathroom, the picture window looking out to the front yard from a minimum of twenty feet from the street.<sup><span style="--font-scale: 0.8;">1</span></p>
-          <br>
-          <p>With this model came the involvement of the public in the home-buying process, not simply home design. The new-built housing catalogs of tract developments in America and the pattern book are symptomatic of this newfound generic, preprogrammed attitude towards mass domestication.</p>
-          <br>
-          <p>This selling model generally remained the same throughout the century. The home was to be rendered as easily consumable as possible. Take “LIFE Houses,” the magazine’s foray into scale models as advertisement.<sup><span style="--font-scale: 0.8;">2</span></sup> The non-commital paper model of a home embedded into the conventional household as a non-commital object, growing into an actual built home.</p>
-          <br>
-          <p>Additionally, the repetition necessary for such a large-scale operation as entire neighborhoods was mitigated by controlled customization. Deviation of that standard came in the form of specific choices within a certain boundary, more an allowance than autonomy. Standardized floor plans and building techniques both reflected and created a collective understanding of the domestic. What is deemed here as “standard” reinforces specific ideologies about social roles, privacy, and comfort within the united states.</p>
-          <br>
-          <p>Standardization has of course evolved since. Thanks to these roots during the twentieth century, stick-frame construction prevails in construction, with over 90% estimated to be wood frame.<sup><span style="--font-scale: 0.8;">3</span></sup> More recently, however, BIM Software increasingly prevails over all stages nad disciplines involved in construction. This mode of building assumes infinite resource production and extraction. If we were to introduce supply to design interfaces, designers would have to think differently about both.</p>
-          <br>
-          <p>While critical of it, this is not to eschew the house-as-product. Standardization is efficient and advantageous; the rethinking of its framework to reflect contemporary industrial realities might also be wielded to alter design outputs as well. Geared towards those practicing in the planning of the contemporary home, “Alterations” is, in one part, a collection of a printed catalog and a digital interface.</p>
-          <br>
-          <p>The catalog is important in its persuasive properties as a less commital mode of demonstrating possibilities. It comes in a package with a set of tools:</p><br>
-          <br>
-          <p>a knife</p><br>
-          <p>a blade disposal kit</p><br>
-          <p>superglue</p><br>
-          <p>toothpicks</p><br>
-          <p>a straight edge</p><br>
-          <p>a scaled ruler</p>
-          <br><p>a roll of tape</p><br>
-          <p>papers (gypsum board)</p><br>
-          <p>stick frames (”parts”)</p><br>
-          <p>plastic doors, staircases, etc. (”elements”)</p><br>
-          <br>
-          <p>This is everything one needs to build their model home.</p><br>
-          <p>Patterns are also included in the book, which may be cut out and used in the design process. “Elements” and “parts” can first be placed along the unfolded interior surfaces, then folded back up. In this reframing – parts first, design second – a door might become a window, or what was once the ceiling may be a wall. We think this is OK.</p><br>
-          <br>
-          <p>An accompanying digital interface comprises a community of homes and a comprehensive material database, tying up the first step to construction. Completed models may be documented and uploaded. Parts used within the physical model are all associated with those in the material database. A tagging system annotates each part. Each material is linked with “upcycling” factories that may come in an ideal world maybe where code accommodates reuse. In doing so, the quirky factory-built model may start at paper, challenging the autocracy of the BIM-designed model.</p>
-          <br><br>
-          <video controls width="100%">
+          <div class="two-col">
+
+            <div>
+              <p>Each house predominates what is expected of the home and how its inhabitants should use it. Architectural expressions of what is expected and normal extend beyond use into cultural and social realms. The American home is constructed, both materially and socially, through standardization and the rendering of the home as a product.</p>
+              <br>
+              <p>The development of the modern home came hand-in-hand with technology. Namely, plumbing and mechanical systems mandated pre-programmed and socialized rooms. This is distinguished from the simple construction of wall-threshold-floor that went into previous residential construction. Such preconceived notions illustrated architecture's role in determining the socialization of the domestic home: where the kitchen was, the ensuite bathroom, the picture window looking out to the front yard from a minimum of twenty feet from the street.<sup>1</sup></p>
+              <br>
+              <p>With this model came the involvement of the public in the home-buying process, not simply home design. The new-built housing catalogs of tract developments in America and the pattern book are symptomatic of this newfound generic, preprogrammed attitude towards mass domestication.</p>
+              <br>
+              <p>This selling model generally remained the same throughout the century. The home was to be rendered as easily consumable as possible. Take "LIFE Houses," the magazine's foray into scale models as advertisement.<sup>2</sup> The non-commital paper model of a home embedded into the conventional household as a non-commital object, growing into an actual built home.</p>
+              <br>
+              <p>Additionally, the repetition necessary for such a large-scale operation as entire neighborhoods was mitigated by controlled customization. Deviation of that standard came in the form of specific choices within a certain boundary, more an allowance than autonomy. Standardized floor plans and building techniques both reflected and created a collective understanding of the domestic. What is deemed here as "standard" reinforces specific ideologies about social roles, privacy, and comfort within the united states.</p>
+              <br>
+              <p>Standardization has of course evolved since. Thanks to these roots during the twentieth century, stick-frame construction prevails in construction, with over 90% estimated to be wood frame.<sup>3</sup> More recently, however, BIM Software increasingly prevails over all stages and disciplines involved in construction. This mode of building assumes infinite resource production and extraction. If we were to introduce supply to design interfaces, designers would have to think differently about both.</p>
+              <br>
+              <p>While critical of it, this is not to eschew the house-as-product. Standardization is efficient and advantageous; the rethinking of its framework to reflect contemporary industrial realities might also be wielded to alter design outputs as well. Geared towards those practicing in the planning of the contemporary home, "Alterations" is, in one part, a collection of a printed catalog and a digital interface.</p>
+              <br>
+              <p>The catalog is important in its persuasive properties as a less commital mode of demonstrating possibilities. It comes in a package with a set of tools:</p>
+              <br>
+              <p>a knife</p><br>
+              <p>a blade disposal kit</p><br>
+              <p>superglue</p><br>
+              <p>toothpicks</p><br>
+              <p>a straight edge</p><br>
+              <p>a scaled ruler</p><br>
+              <p>a roll of tape</p><br>
+              <p>papers (gypsum board)</p><br>
+              <p>stick frames ("parts")</p><br>
+              <p>plastic doors, staircases, etc. ("elements")</p><br>
+              <br>
+              <p>This is everything one needs to build their model home.</p>
+              <br>
+              <p>Patterns are also included in the book, which may be cut out and used in the design process. "Elements" and "parts" can first be placed along the unfolded interior surfaces, then folded back up. In this reframing – parts first, design second – a door might become a window, or what was once the ceiling may be a wall. We think this is OK.</p>
+              <br>
+              <p>An accompanying digital interface comprises a community of homes and a comprehensive material database, tying up the first step to construction. Completed models may be documented and uploaded. Parts used within the physical model are all associated with those in the material database. A tagging system annotates each part. Each material is linked with "upcycling" factories that may come in an ideal world maybe where code accommodates reuse. In doing so, the quirky factory-built model may start at paper, challenging the autocracy of the BIM-designed model.</p>
+              <br>
+
+              <video autoplay muted loop playsinline width="100%">
                 <source src="DV_animation_480.mp4" type="video/mp4">
               </video>
-          <div class="slideshow" id="slideshow-DVBox">
-                <div class="slide active"><img src="DV_downsized-Box_roll.png" alt="Box1"></div>
-                <div class="slide"><img src="DV_downsized-box_semi.png" alt="Box2"></div>
-                <div class="slide"><img src="DV_downsized-box_un.png" alt="Box3"></div>
+
+              <div class="slideshow" id="slideshow-DVBox">
+                <div class="slide active"><img src="DV_downsized-Box_roll.png" alt="Box rolled"></div>
+                <div class="slide"><img src="DV_downsized-box_semi.png" alt="Box semi"></div>
+                <div class="slide"><img src="DV_downsized-box_un.png" alt="Box unrolled"></div>
                 <div class="slideshow-controls">
                   <button class="btn-prev">←</button>
                   <span class="slide-counter"></span>
                   <button class="btn-next">→</button>
                 </div>
-            </div>
+              </div>
 
-                    <div class="slideshow" id="slideshow-DVHip">
-                <div class="slide active"><img src="DV_downsized-render_0014_Hipped_roll.png" alt="Hip1"></div>
-                <div class="slide"><img src="DV_downsized-render_0013_Hipped_semi.png" alt="Hip2"></div>
-                <div class="slide"><img src="DV_downsized-render_0012_Hipped_un.png" alt="Hip3"></div>
+              <div class="slideshow" id="slideshow-DVHip">
+                <div class="slide active"><img src="DV_downsized-render_0014_Hipped_roll.png" alt="Hipped rolled"></div>
+                <div class="slide"><img src="DV_downsized-render_0013_Hipped_semi.png" alt="Hipped semi"></div>
+                <div class="slide"><img src="DV_downsized-render_0012_Hipped_un.png" alt="Hipped unrolled"></div>
                 <div class="slideshow-controls">
                   <button class="btn-prev">←</button>
                   <span class="slide-counter"></span>
                   <button class="btn-next">→</button>
                 </div>
-            </div>
+              </div>
 
-                      <div class="slideshow" id="slideshow-DVLean">
-                <div class="slide active"><img src="DV_downsized-render_0011_Lean_roll.png" alt="Lean1"></div>
-                <div class="slide"><img src="DV_downsized-render_0010_Lean_semi.png""></div>
-                <div class="slide"><img src="DV_downsized-render_0009_Lean_un.png""></div>
+              <div class="slideshow" id="slideshow-DVLean">
+                <div class="slide active"><img src="DV_downsized-render_0011_Lean_roll.png" alt="Lean rolled"></div>
+                <div class="slide"><img src="DV_downsized-render_0010_Lean_semi.png" alt="Lean semi"></div>
+                <div class="slide"><img src="DV_downsized-render_0009_Lean_un.png" alt="Lean unrolled"></div>
                 <div class="slideshow-controls">
                   <button class="btn-prev">←</button>
                   <span class="slide-counter"></span>
                   <button class="btn-next">→</button>
                 </div>
-            </div>
+              </div>
 
-                      <div class="slideshow" id="slideshow-DVMan">
-                <div class="slide active"><img src="DV_downsized-render_0008_Mansard_roll.png"></div>
-                <div class="slide"><img src="DV_downsized-render_0007_Mansard_semi.png"></div>
-                <div class="slide"><img src="DV_downsized-render_0006_Mansard_un.png"></div>
+              <div class="slideshow" id="slideshow-DVMan">
+                <div class="slide active"><img src="DV_downsized-render_0008_Mansard_roll.png" alt="Mansard rolled"></div>
+                <div class="slide"><img src="DV_downsized-render_0007_Mansard_semi.png" alt="Mansard semi"></div>
+                <div class="slide"><img src="DV_downsized-render_0006_Mansard_un.png" alt="Mansard unrolled"></div>
                 <div class="slideshow-controls">
                   <button class="btn-prev">←</button>
                   <span class="slide-counter"></span>
                   <button class="btn-next">→</button>
                 </div>
-            </div>
+              </div>
 
-                      <div class="slideshow" id="slideshow-DVPitcher">
-                <div class="slide active"><img src="DV_downsized-render_0005_Pitcher_roll.png"></div>
-                <div class="slide"><img src="DV_downsized-render_0004_Pitcher_semi.png"></div>
-                <div class="slide"><img src="DV_downsized-render_0003_Pitcher_un.png"></div>
+              <div class="slideshow" id="slideshow-DVPitcher">
+                <div class="slide active"><img src="DV_downsized-render_0005_Pitcher_roll.png" alt="Pitcher rolled"></div>
+                <div class="slide"><img src="DV_downsized-render_0004_Pitcher_semi.png" alt="Pitcher semi"></div>
+                <div class="slide"><img src="DV_downsized-render_0003_Pitcher_un.png" alt="Pitcher unrolled"></div>
                 <div class="slideshow-controls">
                   <button class="btn-prev">←</button>
                   <span class="slide-counter"></span>
                   <button class="btn-next">→</button>
                 </div>
-            </div>
+              </div>
 
-                      <div class="slideshow" id="slideshow-DVZig">
-                <div class="slide active"><img src="DV_downsized-render_0002_Zig_roll.png"></div>
-                <div class="slide"><img src="DV_downsized-render_0001_Zig_semi.png"></div>
-                <div class="slide"><img src="DV_downsized-render_0000_Zig_un.png"></div>
+              <div class="slideshow" id="slideshow-DVZig">
+                <div class="slide active"><img src="DV_downsized-render_0002_Zig_roll.png" alt="Zig rolled"></div>
+                <div class="slide"><img src="DV_downsized-render_0001_Zig_semi.png" alt="Zig semi"></div>
+                <div class="slide"><img src="DV_downsized-render_0000_Zig_un.png" alt="Zig unrolled"></div>
                 <div class="slideshow-controls">
                   <button class="btn-prev">←</button>
                   <span class="slide-counter"></span>
                   <button class="btn-next">→</button>
                 </div>
-            </div>
+              </div>
 
-                      <div class="slideshow" id="slideshow-DVChev">
-                <div class="slide active"><img src="DV_downsized-chevron_roll.png"></div>
-                <div class="slide"><img src="DV_downsized-render_0001_Zig_semi.png"></div>
-                <div class="slide"><img src="DV_downsized-render_0000_Zig_un.png"></div>
+              <div class="slideshow" id="slideshow-DVChev">
+                <div class="slide active"><img src="DV_downsized-chevron_roll.png" alt="Chevron rolled"></div>
+                <div class="slide"><img src="DV_downsized-render_0001_Zig_semi.png" alt="Chevron semi"></div>
+                <div class="slide"><img src="DV_downsized-render_0000_Zig_un.png" alt="Chevron unrolled"></div>
                 <div class="slideshow-controls">
                   <button class="btn-prev">←</button>
                   <span class="slide-counter"></span>
                   <button class="btn-next">→</button>
                 </div>
+              </div>
+
             </div>
 
+            <div>
+              <img src="DV_0000_Legal.png" alt="Legal">
+              <img src="DV_0001_supply list.png" alt="Supply list">
+              <img src="DV_0001_instructions.png" alt="Instructions">
+              <img src="DV_0001_instructions 2.png" alt="Instructions 2">
+              <img src="DV_0006_gigaplex.png" alt="Gigaplex">
+              <img src="DV_0006_pitcher.png" alt="Pitcher">
+              <img src="DV_0006_love.png" alt="Love">
+              <img src="DV_0006_cabrillo.png" alt="Cabrillo">
+              <img src="DV_0000_next steps.png" alt="Next steps">
+              <img src="DV_TURNTABLE_MEDIUM_SLOWER_960.gif" alt="Turntable">
+            </div>
 
-        </div>
+          </div>
 
-        <div>
-          <img src="DV_0000_Legal.png">
-          <img src="DV_0001_supply list.png">
-          <img src="DV_0001_instructions.png">
-          <img src="DV_0001_instructions 2.png">
-          <img src="DV_0006_gigaplex.png">
-          <img src="DV_0006_pitcher.png">
-          <img src="DV_0006_love.png">
-          <img src="DV_0006_cabrillo.png">
-          <img src="DV_0000_next steps.png">
-          <img src="DV_TURNTABLE_MEDIUM_SLOWER_960.gif">
-        </div>
+          <div>
+            <div class="slideshow" id="slideshow-DVSmallMD">
+              <div class="slide active"><img src="DV_web_Model_08.png" alt="Model 08"></div>
+              <div class="slide"><img src="DV_web_Model_03.png" alt="Model 03"></div>
+              <div class="slide"><img src="DV_web_Model_06.png" alt="Model 06"></div>
+              <div class="slide"><img src="DV_web_Model_07.png" alt="Model 07"></div>
+              <div class="slideshow-controls">
+                <button class="btn-prev">←</button>
+                <span class="slide-counter"></span>
+                <button class="btn-next">→</button>
+              </div>
+            </div>
 
-        '
+            <div class="slideshow" id="slideshow-DVLargeMD">
+              <div class="slide active"><img src="DV_web_IMG_0059_3.png" alt="Large model 3"></div>
+              <div class="slide"><img src="DV_web_IMG_0059_2.png" alt="Large model 2"></div>
+              <div class="slide"><img src="DV_web_IMG_0059_1.png" alt="Large model 1"></div>
+              <div class="slideshow-controls">
+                <button class="btn-prev">←</button>
+                <span class="slide-counter"></span>
+                <button class="btn-next">→</button>
+              </div>
+            </div>
+          </div>
+        `
       },
 
       project3: {
-        body: '<p>Project description goes here.</p>'
+        body: `
+          <div class="four-col">
+
+            <div>
+              <p>Within Jean Baptiste Rondelet's mouthful of a series, <i>Traité théorique et pratique de l'art de bâtir</i>, among his 180-odd prints, there is one where he folds brick walls.<sup>1</sup> These drawings lean or nearly fall into another reading of structural posturing. While this plate describes the geometric procedures to the wall as a whole, others relate the techniques on the single unit.<sup>2</sup> These larger geometric configurations require a case-by-case stereotomic procedure. Blocks are carved so that each can slot into one another, ultimately forming a cohesive and abnormal entity.</p>
+              <br>
+              <p>The pyramid is a block-form with a certain immediacy. It is replete of identifications and histories. "Ceremonial Procedures" takes the most base of them as a temple and a monument, applying it for a metropolitan library in Seoul, South Korea.</p>
+              <br>
+              <p>Equipped with a dumb version of Toyokazu Watanabu's Nakano House (which takes after Adolf Loos's Mausoleum for Max Dvorak, which takes after the form of the Ziggurat, and so on...) the project, a pyramid of nine blocks, folds in on itself as a melted soufflé of its original stoic form.</p>
+              <br>
+              <p>Though I have been advised not to sell it this way, the library is programmed not dissimilarly to the cemetery as a host of dead matter. This is to retain and disseminate information about histories, peoples, and cultures. A library, then, can be thought of in relation to the temple as a shell for the protection of these memories, whilst rendering it a monument to draw in and celebrate.</p>
+              <br>
+              <p>Procession and architecture form mirrored relationships: on the one hand, in static representations of procession, the positions of people <i>make up</i> the architecture as something external to walls;<sup>3</sup> on the other, when processions move, architecture has the agency to host and shape these rituals. With this in mind, the form, its relation to site, and the positioning of its program reflect an earnestness towards the building's cultural role.</p>
+              <br>
+              <p>As a mass, the smaller blocks rise out of two adjacent slabs pushing up against it. The awkward fumbling of oblique blocks and floorplates within must be described by a similarly dumb tectonic system. Oversized timber sticks clambor together to form the pyramid and maintain the integrity of the carved block. The façade distinguishes the pyramid as a lightweight skin to an otherwise heavy mass. Large, semi-transparent roof tiles line every wall, attaching to flexible holding systems. When unlatched, the roof tiles tilt outward, as if shutters, dotting every face of the pyramid.</p>
+              <br>
+              <p>The slabs, book-ending the project, act as a rational cousin. These contain a large portion of which that promotes a more progressive library, as mandated by the city of Seoul. This includes large gallery spaces, a performance hall, and zones for childcare. These are peripheral with separate entrances to facilitate the complex purposes in the needs of the library.</p>
+              <br>
+              <p>The pyramid remains the central figure in the scheme. It hosts the archives storing over one million volumes at the base, leading up to public-facing stacks above. The site gradually sinks towards the pyramid in the middle; to enter, individuals must sink further. As a result, the ingress is in a basement floor, wherein visitors slip through the intersections of two volumes. The archive engulfs the entry, visible from above, below, and side to side. Oblique floor plates meander up through the central core to the stacks, eventually leading to an observation tower. Despite the novelties of the library's programming, the archives as material history remains as an otherwise uneconomical nucleus attesting to the criticality of the metropolitan library.</p>
+            </div>
+
+            <div class="footnote">
+              <p>1. General Research Division, The New York Public Library. "PLATE LXXII." New York Public Library Digital Collections.</p>
+              <br>
+              <p>2. see "PLATES XV" and "PLATE XLI."</p>
+              <br><br><br><br><br><br><br><br><br><br><br><br>
+              <p>3. A prominent example to reference is in Genre paintings. The Royal Procession to Hwaseong resounded particularly strongly in the development of this project.</p>
+            </div>
+
+            <div></div>
+
+            <div>
+              <div class="slideshow" id="slideshow-ZGBlocks">
+                <div class="slide active"><img src="Hayes_Caroline_MIDTERM_DG_01.png" alt="Block Folding"></div>
+                <div class="slide"><img src="Hayes_Caroline_MIDTERM_DG_02.png" alt="Block Contours"></div>
+                <div class="slideshow-controls">
+                  <button class="btn-prev">←</button>
+                  <span class="slide-counter"></span>
+                  <button class="btn-next">→</button>
+                </div>
+              </div>
+
+              <div class="slideshow" id="slideshow-ZGSticks">
+                <div class="slide active"><img src="ZG_web_stick2.png" alt="Stick 2"></div>
+                <div class="slide"><img src="ZG_web_stick3.png" alt="Stick 3"></div>
+                <div class="slide"><img src="ZG_web_stick4.png" alt="Stick 4"></div>
+                <div class="slide"><img src="ZG_web_stick1.png" alt="Stick 1"></div>
+                <div class="slideshow-controls">
+                  <button class="btn-prev">←</button>
+                  <span class="slide-counter"></span>
+                  <button class="btn-next">→</button>
+                </div>
+              </div>
+
+              <div class="slideshow" id="slideshow-ZGPlans">
+                <div class="slide active"><img src="ZG_web_pl02.png" alt="Plan 02"></div>
+                <div class="slide"><img src="ZG_web_pl03.png" alt="Plan 03"></div>
+                <div class="slide"><img src="ZG_web_pl04.png" alt="Plan 04"></div>
+                <div class="slide"><img src="ZG_web_pl05.png" alt="Plan 05"></div>
+                <div class="slide"><img src="ZG_web_pl00.png" alt="Plan 00"></div>
+                <div class="slide"><img src="ZG_web_pl01.png" alt="Plan 01"></div>
+                <div class="slideshow-controls">
+                  <button class="btn-prev">←</button>
+                  <span class="slide-counter"></span>
+                  <button class="btn-next">→</button>
+                </div>
+              </div>
+              <div class="slideshow" id="slideshow-ZGSections">
+                <div class="slide active"><img src="ZG_web_scAA.png" alt="Section AA"></div>
+                <div class="slide"><img src="ZG_web_scBB.png" alt="Section BB"></div>
+                <div class="slide"><img src="ZG_web_scCC.png" alt="Section CC"></div>
+                <div class="slideshow-controls">
+                  <button class="btn-prev">←</button>
+                  <span class="slide-counter"></span>
+                  <button class="btn-next">→</button>
+                </div>
+              </div>
+
+              <div class="slideshow" id="slideshow-ZGRenders">
+                <div class="slide active"><img src="ZG_Block_D_02.jpg" alt="Final 5"></div>
+                <div class="slide"><img src="ZG_Block_01.jpg" alt="Final 1"></div>
+                <div class="slide"><img src="ZG_Block_02.jpg" alt="Final 2"></div>
+                <div class="slide"><img src="ZG_Block_03.jpg" alt="Final 3"></div>
+                <div class="slide"><img src="ZG_Block_04.jpg" alt="Final 4"></div>
+                <div class="slideshow-controls">
+                  <button class="btn-prev">←</button>
+                  <span class="slide-counter"></span>
+                  <button class="btn-next">→</button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        `
       },
 
       project4: {
-        body: '<p>Project description goes here.</p>'
+        body: `
+          <div class="two-col">
+
+            <div>
+              <p>The Berliner Schloss once contained a 17th century palace. It was monument evocative of Prussian Baroque architecture, and thereby the nation's imperial power. After its destruction in the second World War, the East German government demolished its ruins and constructed a new modernist building. It was evocative of the political and architectural zeitgeist of the time: cutting-edge, sometimes gimmicky glass technology, clean lines, rational form. The fall of East Germany brought on another new evocation. With the increasing favor of capitalism and globalization, the rectangular behemoth on the Schloss was a relic of an outmoded ideology.</p>
+              <br>
+              <p>As Germany's national identity twisted and contorted throughout the twentieth century, the come of the twenty-first offered some chance at erasure: why did this building have to stand as a consequence of failed regimes, instead of rebuilding what that had been lost? To convince the public of an unnecessary and even – some might say – profligate endeavor to demolish, invested individuals simply shrouded the scar with a flattened image of something more palatable.</p>
+              <br>
+              <p>To pull this off required the construction of an impressive scaffolding structure around the existing perimeter. Wrapping around this were windscreens projecting the elevations of the previous baroque palace. Perhaps more pleasing to traditional taste, it also reflected Germany's imperial past, drawing on nationalist attitudes to yearn for former power with the glaze of nostalgia. The building became a billboard for another building, advertising a revisionist history to be placed on the site. The new structure reaffirms the propogandist nature of both modernist socialism in East Germany as well as imperial palaces, albeit favoring one over the other. Scaffolding here was not simply an efficient modular unit of structural support, but the cheapest and fastest ways to disseminate an ideology.</p>
+              <br>
+              <p>"Covering Up" takes measurement and image as a political construct and a tool. The scaffolding is made of cut MDF sticks and joinery. Its coat is a textile that kind of looks like an elevation.</p>
+            </div>
+
+            <div>
+              <img src="KY_tap1.png" alt="Scaffolding 1">
+              <img src="KY_tap2.png" alt="Scaffolding 2">
+              <img src="KY_tap3.png" alt="Scaffolding 3">
+              <img src="KY_zoom1.png" alt="Tapestry 1">
+              <img src="KY_zoom2.png" alt="Tapestry 2">
+              <img src="KY_zoom3.png" alt="Tapestry 3">
+            </div>
+
+          </div>
+          <div>
+            <img src="ZG_web_stickglue.png" alt="Sticks Glue">
+          </div>
+        `
       }
 
     };
@@ -766,4 +915,3 @@
 
 </body>
 </html>
-
