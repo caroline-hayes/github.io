@@ -223,13 +223,13 @@
     #detail-body img {
       width: 100%;
       display: block;
-      margin: 0.5rem 0;
+      margin: 1rem 0;
     }
 
     #detail-body video {
       width: 100%;
       display: block;
-      margin: 0.5rem 0;
+      margin: 1rem 0;
     }
 
     #detail-body .footnote p {
@@ -246,7 +246,7 @@
     }
 
     #detail-body .two-col img {
-      margin: 0.5rem 0;
+      margin: 1rem 0;
     }
 
     /* four-col layout */
@@ -254,11 +254,11 @@
       display: grid;
       grid-template-columns: 11fr 3fr 1fr 15fr;
       gap: 1rem;
-      margin: 0;
+      margin: 1rem;
     }
 
     #detail-body .four-col img {
-      margin: 0.5rem 0;
+      margin: 1rem 0;
     }
 
     #detail-body .four-col p {
@@ -277,7 +277,7 @@
     .slideshow {
       position: relative;
       width: 100%;
-      margin: 0.5rem 0;
+      margin: 1rem 0;
     }
 
     .slideshow .slide {
@@ -593,7 +593,138 @@
       },
 
       project2: {
-        body: '<p>Project description goes here.</p>'
+        body: `
+        <div class="two-col">
+          <div>
+          <p>Each house predominates what is expected of the home and how its inhabitants should use it. Architectural expressions of what is expected and normal extend beyond use into cultural and social realms. The American home is constructed, both materially and socially, through standardization and the rendering of the home as a product.</p>
+          <br>
+          <p>The development of the modern home came hand-in-hand with technology. Namely, plumbing and mechanical systems mandated pre-programmed and socialized rooms. This is distinguished from the simple construction of wall-threshold-floor that went into previous residential construction. Such preconceived notions illustrated architecture’s role in determining the socialization of the domestic home: where the kitchen was, the ensuite bathroom, the picture window looking out to the front yard from a minimum of twenty feet from the street.<sup><span style="--font-scale: 0.8;">1</span></p>
+          <br>
+          <p>With this model came the involvement of the public in the home-buying process, not simply home design. The new-built housing catalogs of tract developments in America and the pattern book are symptomatic of this newfound generic, preprogrammed attitude towards mass domestication.</p>
+          <br>
+          <p>This selling model generally remained the same throughout the century. The home was to be rendered as easily consumable as possible. Take “LIFE Houses,” the magazine’s foray into scale models as advertisement.<sup><span style="--font-scale: 0.8;">2</span></sup> The non-commital paper model of a home embedded into the conventional household as a non-commital object, growing into an actual built home.</p>
+          <br>
+          <p>Additionally, the repetition necessary for such a large-scale operation as entire neighborhoods was mitigated by controlled customization. Deviation of that standard came in the form of specific choices within a certain boundary, more an allowance than autonomy. Standardized floor plans and building techniques both reflected and created a collective understanding of the domestic. What is deemed here as “standard” reinforces specific ideologies about social roles, privacy, and comfort within the united states.</p>
+          <br>
+          <p>Standardization has of course evolved since. Thanks to these roots during the twentieth century, stick-frame construction prevails in construction, with over 90% estimated to be wood frame.<sup><span style="--font-scale: 0.8;">3</span></sup> More recently, however, BIM Software increasingly prevails over all stages nad disciplines involved in construction. This mode of building assumes infinite resource production and extraction. If we were to introduce supply to design interfaces, designers would have to think differently about both.</p>
+          <br>
+          <p>While critical of it, this is not to eschew the house-as-product. Standardization is efficient and advantageous; the rethinking of its framework to reflect contemporary industrial realities might also be wielded to alter design outputs as well. Geared towards those practicing in the planning of the contemporary home, “Alterations” is, in one part, a collection of a printed catalog and a digital interface.</p>
+          <br>
+          <p>The catalog is important in its persuasive properties as a less commital mode of demonstrating possibilities. It comes in a package with a set of tools:</p><br>
+          <br>
+          <p>a knife</p><br>
+          <p>a blade disposal kit</p><br>
+          <p>superglue</p><br>
+          <p>toothpicks</p><br>
+          <p>a straight edge</p><br>
+          <p>a scaled ruler</p>
+          <br><p>a roll of tape</p><br>
+          <p>papers (gypsum board)</p><br>
+          <p>stick frames (”parts”)</p><br>
+          <p>plastic doors, staircases, etc. (”elements”)</p><br>
+          <br>
+          <p>This is everything one needs to build their model home.</p><br>
+          <p>Patterns are also included in the book, which may be cut out and used in the design process. “Elements” and “parts” can first be placed along the unfolded interior surfaces, then folded back up. In this reframing – parts first, design second – a door might become a window, or what was once the ceiling may be a wall. We think this is OK.</p><br>
+          <br>
+          <p>An accompanying digital interface comprises a community of homes and a comprehensive material database, tying up the first step to construction. Completed models may be documented and uploaded. Parts used within the physical model are all associated with those in the material database. A tagging system annotates each part. Each material is linked with “upcycling” factories that may come in an ideal world maybe where code accommodates reuse. In doing so, the quirky factory-built model may start at paper, challenging the autocracy of the BIM-designed model.</p>
+          <br><br>
+          <video controls width="100%">
+                <source src="DV_animation_480.mp4" type="video/mp4">
+              </video>
+          <div class="slideshow" id="slideshow-DVBox">
+                <div class="slide active"><img src="DV_downsized-Box_roll.png" alt="Box1"></div>
+                <div class="slide"><img src="DV_downsized-box_semi.png" alt="Box2"></div>
+                <div class="slide"><img src="DV_downsized-box_un.png" alt="Box3"></div>
+                <div class="slideshow-controls">
+                  <button class="btn-prev">←</button>
+                  <span class="slide-counter"></span>
+                  <button class="btn-next">→</button>
+                </div>
+            </div>
+
+                    <div class="slideshow" id="slideshow-DVHip">
+                <div class="slide active"><img src="DV_downsized-render_0014_Hipped_roll.png" alt="Hip1"></div>
+                <div class="slide"><img src="DV_downsized-render_0013_Hipped_semi.png" alt="Hip2"></div>
+                <div class="slide"><img src="DV_downsized-render_0012_Hipped_un.png" alt="Hip3"></div>
+                <div class="slideshow-controls">
+                  <button class="btn-prev">←</button>
+                  <span class="slide-counter"></span>
+                  <button class="btn-next">→</button>
+                </div>
+            </div>
+
+                      <div class="slideshow" id="slideshow-DVLean">
+                <div class="slide active"><img src="DV_downsized-render_0011_Lean_roll.png" alt="Lean1"></div>
+                <div class="slide"><img src="DV_downsized-render_0010_Lean_semi.png""></div>
+                <div class="slide"><img src="DV_downsized-render_0009_Lean_un.png""></div>
+                <div class="slideshow-controls">
+                  <button class="btn-prev">←</button>
+                  <span class="slide-counter"></span>
+                  <button class="btn-next">→</button>
+                </div>
+            </div>
+
+                      <div class="slideshow" id="slideshow-DVMan">
+                <div class="slide active"><img src="DV_downsized-render_0008_Mansard_roll.png"></div>
+                <div class="slide"><img src="DV_downsized-render_0007_Mansard_semi.png"></div>
+                <div class="slide"><img src="DV_downsized-render_0006_Mansard_un.png"></div>
+                <div class="slideshow-controls">
+                  <button class="btn-prev">←</button>
+                  <span class="slide-counter"></span>
+                  <button class="btn-next">→</button>
+                </div>
+            </div>
+
+                      <div class="slideshow" id="slideshow-DVPitcher">
+                <div class="slide active"><img src="DV_downsized-render_0005_Pitcher_roll.png"></div>
+                <div class="slide"><img src="DV_downsized-render_0004_Pitcher_semi.png"></div>
+                <div class="slide"><img src="DV_downsized-render_0003_Pitcher_un.png"></div>
+                <div class="slideshow-controls">
+                  <button class="btn-prev">←</button>
+                  <span class="slide-counter"></span>
+                  <button class="btn-next">→</button>
+                </div>
+            </div>
+
+                      <div class="slideshow" id="slideshow-DVZig">
+                <div class="slide active"><img src="DV_downsized-render_0002_Zig_roll.png"></div>
+                <div class="slide"><img src="DV_downsized-render_0001_Zig_semi.png"></div>
+                <div class="slide"><img src="DV_downsized-render_0000_Zig_un.png"></div>
+                <div class="slideshow-controls">
+                  <button class="btn-prev">←</button>
+                  <span class="slide-counter"></span>
+                  <button class="btn-next">→</button>
+                </div>
+            </div>
+
+                      <div class="slideshow" id="slideshow-DVChev">
+                <div class="slide active"><img src="DV_downsized-chevron_roll.png"></div>
+                <div class="slide"><img src="DV_downsized-render_0001_Zig_semi.png"></div>
+                <div class="slide"><img src="DV_downsized-render_0000_Zig_un.png"></div>
+                <div class="slideshow-controls">
+                  <button class="btn-prev">←</button>
+                  <span class="slide-counter"></span>
+                  <button class="btn-next">→</button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div>
+          <img src="DV_0000_Legal.png">
+          <img src="DV_0001_supply list.png">
+          <img src="DV_0001_instructions.png">
+          <img src="DV_0001_instructions 2.png">
+          <img src="DV_0006_gigaplex.png">
+          <img src="DV_0006_pitcher.png">
+          <img src="DV_0006_love.png">
+          <img src="DV_0006_cabrillo.png">
+          <img src="DV_0000_next steps.png">
+          <img src="DV_TURNTABLE_MEDIUM_SLOWER_960.gif">
+        </div>
+
+        '
       },
 
       project3: {
