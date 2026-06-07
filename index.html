@@ -322,12 +322,12 @@
     }
 
     .slideshow.clickable .slide {
-  cursor: e-resize;
-}
+      cursor: e-resize;
+    }
 
-.slideshow.clickable .slideshow-controls {
-  display: none;
-}
+    .slideshow.clickable .slideshow-controls {
+      display: none;
+    }
 
     /* ── BODY COPY LINKS ── */
     .bodycopy-link a, a.bodycopy-link {
@@ -335,6 +335,141 @@
       text-decoration: none;
     }
 
+    /* ── MOBILE PROJECT PAGE (hidden on desktop) ── */
+    #page-project-mobile {
+      display: none;
+    }
+
+    /* ══════════════════════════════════════════
+       MOBILE STYLES
+    ══════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      #site-title {
+        margin-left: 1rem;
+        font-size: 2rem;
+        padding: 0.5rem 0 0;
+      }
+
+      .body-area {
+        flex-direction: column;
+      }
+
+      nav {
+        width: 100%;
+        flex-direction: row;
+        gap: 1.2rem;
+        padding: 0.1rem 1rem 0.4rem;
+      }
+
+      .pages {
+        padding: 0 1rem;
+      }
+
+      /* On mobile, projects page just shows the index list */
+      #page-projects.active {
+        display: block;
+        height: auto;
+      }
+
+      /* Hide the desktop detail panel on mobile */
+      #page-projects .project-detail {
+        display: none !important;
+      }
+
+      .projects-index {
+        width: 100%;
+        padding: 0;
+      }
+
+      /* ── MOBILE PROJECT DETAIL PAGE ── */
+      #page-project-mobile {
+        display: none;
+        padding: 0;
+      }
+
+      #page-project-mobile.active {
+        display: block;
+      }
+
+      /* Back nav for mobile project page */
+      .mobile-project-nav {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+
+      .mobile-project-nav a {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      /* ── MOBILE DETAIL BODY REFLOW ── */
+
+      /* All multi-col layouts collapse to single column */
+      #mobile-detail-body .two-col,
+      #mobile-detail-body .three-col,
+      #mobile-detail-body .four-col {
+        display: block;
+      }
+
+      /* Hide the empty spacer div (3rd child in four-col) */
+      #mobile-detail-body .four-col > div:nth-child(3):empty {
+        display: none;
+      }
+
+      /* Footnotes: always pushed to bottom, smaller text */
+      #mobile-detail-body .footnote {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #ccc;
+      }
+
+      #mobile-detail-body .footnote p {
+        font-size: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+
+      /* Remove the desktop <br> spacers inside footnotes */
+      #mobile-detail-body .footnote br {
+        display: none;
+      }
+
+      #mobile-detail-body p {
+        font-size: 1rem;
+        line-height: normal;
+        margin-bottom: 1rem;
+      }
+
+      #mobile-detail-body img {
+        width: 100%;
+        display: block;
+        margin: 1rem 0;
+      }
+
+      #mobile-detail-body video {
+        width: 100%;
+        display: block;
+        margin: 1rem 0;
+      }
+
+      /* two-col images stack */
+      #mobile-detail-body .two-col img {
+        margin: 1rem 0;
+      }
+
+      /* four-col images stack */
+      #mobile-detail-body .four-col img {
+        margin: 1rem 0;
+      }
+
+      #mobile-detail-body .four-col p {
+        margin-bottom: 1rem;
+      }
+
+    }
   </style>
 </head>
 <body>
@@ -405,12 +540,20 @@
 
         </div>
 
-        <!-- Project detail panel -->
+        <!-- Desktop project detail panel (hidden on mobile) -->
         <div class="project-detail" id="project-detail-panel">
           <a class="close-detail" onclick="closeProject()">[close]</a>
           <div id="detail-body"></div>
         </div>
 
+      </div>
+
+      <!-- MOBILE PROJECT DETAIL PAGE -->
+      <div id="page-project-mobile" class="page">
+        <div class="mobile-project-nav">
+          <a onclick="closeMobileProject()">[← projects]</a>
+        </div>
+        <div id="mobile-detail-body"></div>
       </div>
 
     </div><!-- /pages -->
@@ -431,26 +574,88 @@
         }
 
         if (ss.classList.contains('clickable')) {
-  ss.querySelectorAll('.slide').forEach(slide => {
-    slide.addEventListener('click', () => {
-      current = (current + 1) % slides.length;
-      update();
-    });
-  });
-}
+          ss.querySelectorAll('.slide').forEach(slide => {
+            slide.addEventListener('click', () => {
+              current = (current + 1) % slides.length;
+              update();
+            });
+          });
+        }
 
-        ss.querySelector('.btn-prev').addEventListener('click', () => {
+        const prevBtn = ss.querySelector('.btn-prev');
+        const nextBtn = ss.querySelector('.btn-next');
+        if (prevBtn) prevBtn.addEventListener('click', () => {
           current = (current - 1 + slides.length) % slides.length;
           update();
         });
-
-        ss.querySelector('.btn-next').addEventListener('click', () => {
+        if (nextBtn) nextBtn.addEventListener('click', () => {
           current = (current + 1) % slides.length;
           update();
         });
 
         update();
       });
+    }
+
+    // ── MOBILE DETECTION ──
+    function isMobile() {
+      return window.innerWidth <= 768;
+    }
+
+    // ── REFLOW FOR MOBILE ──
+    // Extracts images/videos, text, and footnotes from a four-col block
+    // and returns them reordered: media first, then text, then footnotes.
+    function reflowForMobile(html) {
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = html;
+
+      // Process each four-col and two-col block
+      wrapper.querySelectorAll('.four-col, .two-col').forEach(col => {
+        const isInsideDetailBody = true; // always true here
+
+        // Collect children
+        const children = Array.from(col.children);
+
+        // Separate into: footnote divs, media divs, text divs
+        const footnotes = [];
+        const mediaBlocks = [];
+        const textBlocks = [];
+
+        children.forEach(child => {
+          // Empty spacer divs — skip
+          if (child.innerHTML.trim() === '') return;
+
+          if (child.classList.contains('footnote')) {
+            footnotes.push(child);
+          } else {
+            // Check if this child is primarily media (images/videos/slideshows)
+            // vs primarily text (paragraphs)
+            const hasMedia = child.querySelector('img, video, .slideshow');
+            const hasParagraphs = child.querySelector('p');
+
+            if (hasMedia && !hasParagraphs) {
+              mediaBlocks.push(child);
+            } else if (hasParagraphs && !hasMedia) {
+              textBlocks.push(child);
+            } else if (hasMedia && hasParagraphs) {
+              // Mixed: split into separate media and text nodes
+              // Put the whole block in text (it will display sequentially anyway)
+              textBlocks.push(child);
+            } else {
+              textBlocks.push(child);
+            }
+          }
+        });
+
+        // Rebuild: media → text → footnotes
+        // Clear the col and re-append in new order
+        col.innerHTML = '';
+        mediaBlocks.forEach(b => col.appendChild(b));
+        textBlocks.forEach(b => col.appendChild(b));
+        footnotes.forEach(b => col.appendChild(b));
+      });
+
+      return wrapper.innerHTML;
     }
 
     // ── PROJECT DATA ──
@@ -732,11 +937,11 @@
             </div>
 
             <div class="footnote">
-              <p>1. Aureli, Pier Vittorio. “Enjoy the Silence The Case for Typological Design.” <i>Burning Farm</i>, no. 10 (2024)., Aureli, Pier Vittorio. “Life, Abstracted: Notes on the Floor Plan.” <i>E-Flux</i>, 2017.</p>
+              <p>1. Aureli, Pier Vittorio. "Enjoy the Silence The Case for Typological Design." <i>Burning Farm</i>, no. 10 (2024)., Aureli, Pier Vittorio. "Life, Abstracted: Notes on the Floor Plan." <i>E-Flux</i>, 2017.</p>
               <br><br><br><br><br>
-              <p>2. <i>LIFE Magazine</i>. “LIFE Presents Eight Houses Especially Designed by Famous American Architects.” September 26, 1938.</p>
+              <p>2. <i>LIFE Magazine</i>. "LIFE Presents Eight Houses Especially Designed by Famous American Architects." September 26, 1938.</p>
               <br><br><br><br><br><br><br><br><br><br><br>
-              <p>3. National Association of Home Builders. “Share of Wood-Framed Homes Dips in 2023.” August 13, 2024.</p>
+              <p>3. National Association of Home Builders. "Share of Wood-Framed Homes Dips in 2023." August 13, 2024.</p>
             </div>
 
             <div></div>
@@ -918,7 +1123,8 @@
     function showPage(id) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.getElementById('page-' + id).classList.add('active');
-      closeProject();
+      if (id !== 'project-mobile') closeProject();
+      window.scrollTo(0, 0);
     }
 
     function toggleAbout() {
@@ -930,13 +1136,27 @@
     function openProject(id) {
       const p = projects[id];
       if (!p) return;
-      document.getElementById('detail-body').innerHTML = p.body;
-      document.getElementById('project-detail-panel').classList.add('open');
-      initSlideshows();
+
+      if (isMobile()) {
+        // Mobile: show a dedicated full page
+        const mobileBody = document.getElementById('mobile-detail-body');
+        mobileBody.innerHTML = reflowForMobile(p.body);
+        showPage('project-mobile');
+        initSlideshows();
+      } else {
+        // Desktop: show inline panel
+        document.getElementById('detail-body').innerHTML = p.body;
+        document.getElementById('project-detail-panel').classList.add('open');
+        initSlideshows();
+      }
     }
 
     function closeProject() {
       document.getElementById('project-detail-panel').classList.remove('open');
+    }
+
+    function closeMobileProject() {
+      showPage('projects');
     }
 
   </script>
